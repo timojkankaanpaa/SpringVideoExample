@@ -15,7 +15,7 @@ public class Partner implements Serializable {
 
 	@Id
 	@SequenceGenerator(name="PARTNER_ID_GENERATOR" )
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="PARTNER_ID_GENERATOR")
+	@GeneratedValue(strategy=GenerationType.IDENTITY, generator="PARTNER_ID_GENERATOR")
 	private int id;
 
 	private String name;
