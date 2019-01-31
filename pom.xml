@@ -42,10 +42,6 @@
 			<version>2.5.0-RC1</version>
 		</dependency>
 		<dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
-		</dependency>
-		<dependency>
 		  <groupId>org.apache.httpcomponents</groupId>
 		  <artifactId>httpclient</artifactId>
 		  <version>4.5.3</version>
@@ -56,16 +52,6 @@
 		        <version>2.1</version>
 		        <scope>provided</scope>
 		</dependency>			    
-		<!--  for testing -->
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
-		</dependency>	
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-jpa</artifactId>
-        </dependency>
         <!-- swagger for REST documentation -->
 		<dependency>
 		    <groupId>io.springfox</groupId>
@@ -83,15 +69,7 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-        <plugin>
-            <artifactId>maven-compiler-plugin</artifactId>
-            <version>3.1</version>
-            <configuration>
-                <fork>true</fork>
-                <executable>C:\Program Files\Java\jdk1.8.0_171\bin\javac.exe</executable>
-            </configuration>
-        </plugin>            
+            </plugin>         
         </plugins>
     </build>
     <repositories>
