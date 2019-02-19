@@ -1,0 +1,36 @@
+<html>
+<head>
+    <title>Partner example in plain JS</title>
+</head>
+<body>
+    <div id="partner"></div>
+<script>
+    var tableOfPartners="<h2>Partner list</h2><table><tr><th>Id</th><th>Name</th></tr>";
+    showPartners();
+    
+    function showPartners(){
+        
+        fetch('partners')
+            .then(
+            function(response) {
+                if (response.status !== 200) {
+                    console.log('Looks like there was a problem. Status Code: ' + response.status);
+                    return;
+                }
+                response.json().then(function(data) {
+                    for(var i=0;i<data.length;i++){
+                        tableOfPartners+="<tr><td>"+ data[i].id +"</td><td>" + data[i].name +"</td></tr>";
+                        alert(tableOfPartners);
+                    }
+                    tableOfPartners+="</table>";
+                    document.getElementById("partner").innerHTML = tableOfPartners;
+                });
+                }
+            )
+            .catch(function(err) {
+                console.log('Fetch Error :-S', err);
+            });
+    }
+</script>
+</body>
+</html>
