@@ -1,11 +1,16 @@
 <html>
 <head>
     <title>Partner example in plain JS</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </head>
 <body>
     <div id="partner"></div>
 <script>
-    var tableOfPartners="<h2>Partner list</h2><table><tr><th>Id</th><th>Name</th></tr>";
+    var tableOfPartners="<h2>Partner list</h2><table class=\"table table-striped\"><tr><th>Id</th><th>Name</th></tr>";
     showPartners();
     
     function showPartners(){
@@ -20,7 +25,6 @@
                 response.json().then(function(data) {
                     for(var i=0;i<data.length;i++){
                         tableOfPartners+="<tr><td>"+ data[i].id +"</td><td>" + data[i].name +"</td></tr>";
-                        alert(tableOfPartners);
                     }
                     tableOfPartners+="</table>";
                     document.getElementById("partner").innerHTML = tableOfPartners;
