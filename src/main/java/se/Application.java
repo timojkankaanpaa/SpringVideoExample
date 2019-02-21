@@ -1,3 +1,4 @@
+//update-alternatives --config java
 package se;
 
 import org.springframework.boot.SpringApplication;
